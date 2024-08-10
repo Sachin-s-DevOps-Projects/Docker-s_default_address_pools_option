@@ -38,5 +38,9 @@ sudo systemctl restart docker
 docker start <containers-name>
 ````
 
+Let’s see how many networks I have right now:
+````
+sudo docker network ls --filter driver=bridge --quiet | wc -l 
+````
 
 
