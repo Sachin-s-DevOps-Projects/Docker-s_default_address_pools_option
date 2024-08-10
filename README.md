@@ -12,3 +12,31 @@ Searching for the issue, I found it was fairly common, and could be resolved by 
 
 Before I tell you more - Here’s the rundown on how to fix the problem.
 
+````
+sudo nano /etc/docker/daemon.json
+````
+````
+{
+  "default-address-pools" : [
+    {
+      "base" : "172.17.0.0/12",
+      "size" : 20
+    },
+    {
+      "base" : "192.168.0.0/16",
+      "size" : 24
+    }
+  ]
+}
+````
+````
+sudo systemctl restart docker
+````
+>After this, contaner may be down, you have to up again previous container
+
+````
+docker start <containers-name>
+````
+
+
+
