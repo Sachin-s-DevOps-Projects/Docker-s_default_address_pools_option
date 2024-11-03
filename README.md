@@ -35,7 +35,7 @@ sudo systemctl restart docker
 >After this, contaner may be down, you have to up again previous container
 
 ````
-docker start <containers-name>
+docker start $(docker ps -aq --filter "status=exited")
 ````
 
 Let’s see how many networks I have right now:
